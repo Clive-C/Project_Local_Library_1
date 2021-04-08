@@ -30,6 +30,7 @@ function getMostCommonGenres(books) {
     bookInfo.count = count.length;
     result.push(bookInfo);
   })
+  // this is my helper function code
   return sortAndLimit(result);
 }
 
@@ -44,6 +45,7 @@ function getMostPopularBooks(books) {
     bookInfo.count = count;
     result.push(bookInfo);
   })
+  // this is my helper function code
   return sortAndLimit(result);
 }
 
@@ -63,8 +65,12 @@ function getMostPopularAuthors(books, authors) {
     authorInfo.count = count;
     result.push(authorInfo);  
   });
+  // this is my helper function code
   return sortAndLimit(result);
 }
+
+/* helper function code to sort and limit the result to 5 entries. 
+This was used in several instances as the output requested was a list by popularity with a limit of the number of entries*/
 
 function sortAndLimit(input){
   const result = input.sort((countA, countB) => countA.count < countB.count ? 1: -1).slice(0,5);
